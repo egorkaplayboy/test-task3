@@ -1,0 +1,22 @@
+@import "./fonts";
+
+$MainBlue: #003264;
+$Dark: #242627;
+$Blue: #187cd3;
+$Orange: #e9862a;
+$Gray: #e0e0e0;
+
+@mixin f400 {
+  font-family: "HeliosC", sans-serif;
+  font-weight: 400;
+}
+
+@mixin f500 {
+  font-family: "Gilroy-Medium", sans-serif;
+  font-weight: 500;
+}
+
+@mixin f700 {
+  font-family: "HeliosC-Bold", sans-serif;
+  font-weight: 700;
+}
