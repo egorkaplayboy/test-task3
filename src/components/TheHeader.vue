@@ -50,8 +50,8 @@ export default {
   },
   methods: {
     handleNavItemClick(index) {
+      // Проверяем, является ли элемент последним
       if (index === this.navLinks.length - 1) {
-        // Проверяем, является ли элемент последним
         this.isPopupOpen = !this.isPopupOpen; // Переключаем состояние попапа
       }
     },

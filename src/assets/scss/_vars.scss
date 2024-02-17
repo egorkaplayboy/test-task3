@@ -5,6 +5,8 @@ $Dark: #242627;
 $Blue: #187cd3;
 $Orange: #e9862a;
 $Gray: #e0e0e0;
+$Gray2: #ededed;
+$Stroke: #646464;
 
 @mixin f400 {
   font-family: "HeliosC", sans-serif;
@@ -19,4 +21,7 @@ $Gray: #e0e0e0;
 @mixin f700 {
   font-family: "HeliosC-Bold", sans-serif;
   font-weight: 700;
+}
+@mixin shadow {
+  filter: drop-shadow(0px 4px 52px rgba(0, 0, 0, 0.13));
 }
