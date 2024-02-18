@@ -93,7 +93,7 @@
 <script>
 export default {};
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../assets/scss/_vars.scss";
 .qualities {
   &__list {
@@ -146,6 +146,7 @@ export default {};
     }
 
     span {
+      @include f400;
       color: $Stroke;
       font-size: 16px;
       margin-top: 10px;

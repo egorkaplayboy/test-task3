@@ -24,7 +24,7 @@
 <script>
 export default {};
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../assets/scss/_vars.scss";
 .welcome {
   background-image: url(../assets/img/welcomeBg.webp);
