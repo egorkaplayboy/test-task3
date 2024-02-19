@@ -7,7 +7,7 @@
             Энергия твоего роста! – заряжаем твою карьеру
           </div>
           <div class="welcome__info-button button">
-            <button>Cтать частью команды</button>
+            <button @click="showPopup">Cтать частью команды</button>
           </div>
         </div>
         <div class="welcome_image">
@@ -19,10 +19,30 @@
         </div>
       </div>
     </div>
+    <ThePopup v-if="isOpen" @close="closePopup" />
   </section>
 </template>
+
 <script>
-export default {};
+import ThePopup from "./ThePopup.vue";
+export default {
+  components: {
+    ThePopup,
+  },
+  data() {
+    return {
+      isOpen: false,
+    };
+  },
+  methods: {
+    showPopup() {
+      this.isOpen = true;
+    },
+    closePopup() {
+      this.isOpen = false;
+    },
+  },
+};
 </script>
 <style lang="scss" scoped>
 @import "../assets/scss/_vars.scss";

@@ -7,6 +7,7 @@ $Orange: #e9862a;
 $Gray: #e0e0e0;
 $Gray2: #ededed;
 $Gray3: #828282;
+$Gray4: #f2f2f2;
 $Stroke: #646464;
 $WhiteBg: #f7f7f7;
 
@@ -26,4 +27,7 @@ $WhiteBg: #f7f7f7;
 }
 @mixin shadow {
   filter: drop-shadow(0px 4px 52px rgba(0, 0, 0, 0.13));
+}
+@mixin anim {
+  animation: process 2s infinite linear;
 }

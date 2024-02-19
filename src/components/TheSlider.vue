@@ -60,17 +60,28 @@ export default {
     };
   },
   methods: {
+    /**
+     * Переключает на предыдущий слайд в слайдере.
+     * Если текущий слайд - первый, переключает на последний слайд.
+     */
     prevSlide() {
       if (this.currentSlide > 0) {
         this.currentSlide--;
       } else {
+        // Если текущий слайд первый, переключаем на последний слайд
         this.currentSlide = this.sliderData.length - 1;
       }
     },
+
+    /**
+     * Переключает на следующий слайд в слайдере.
+     * Если текущий слайд - последний, переключает на первый слайд.
+     */
     nextSlide() {
       if (this.currentSlide < this.sliderData.length - 1) {
         this.currentSlide++;
       } else {
+        // Если текущий слайд последний, переключаем на первый слайд
         this.currentSlide = 0;
       }
     },
@@ -78,7 +89,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../assets/scss/_vars.scss";
 .slider {
   max-width: 1480px;
