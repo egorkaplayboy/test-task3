@@ -1,24 +1,16 @@
 <template>
   <section class="welcome">
     <div class="container">
-      <div class="welcome__inner">
-        <div class="welcome__info">
-          <div class="welcome__info-title">
-            Энергия твоего роста! – заряжаем твою карьеру
-          </div>
-          <div class="welcome__info-button button">
-            <button @click="showPopup">Cтать частью команды</button>
-          </div>
-        </div>
-        <div class="welcome_image">
-          <img
-            src="../assets/img/welcomePeoples.png"
-            alt="peoples"
-            loading="lazy"
-          />
-        </div>
+      <div class="welcome__info">
+        <h1 class="welcome__title">
+          Энергия твоего роста! – <br />заряжаем твою карьеру
+        </h1>
+        <button @click="showPopup" class="welcome__button" href="#">
+          Cтать частью команды
+        </button>
       </div>
     </div>
+    <img class="welcome__img" src="../assets/img/welcomePeoples.png" alt="#" />
     <ThePopup v-if="isOpen" @close="closePopup" />
   </section>
 </template>
@@ -47,58 +39,86 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/scss/_vars.scss";
 .welcome {
-  background-image: url(../assets/img/welcomeBg.webp);
-  background-position: left;
-  background-size: cover;
-  overflow: hidden;
-  margin-bottom: 76px;
-  &__inner {
-    display: flex;
-    height: 448px;
-    align-items: center;
-    align-content: space-between;
-    position: relative;
-  }
+  background: url(../assets/img/welcomeBlue.png) left no-repeat,
+    url(../assets/img/welcomeHome.jpg) right no-repeat;
+  position: relative;
+  height: 448px;
+  margin-bottom: 57px;
   &__info {
-    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-
-  &__info-title {
+  &__title {
     @include f700;
     font-size: 36px;
-    line-height: 42px;
+    color: #ffffff;
+  }
+  &__button {
+    margin-top: 59px;
+    width: 254px;
+    height: 64px;
+    background-color: $Orange;
+    padding: 22px 33px;
     color: #fff;
-    margin-bottom: 56px;
-  }
-
-  &__info-button {
-    button {
-      width: 254px;
-      height: 64px;
-      background-color: $Orange;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      @include f700;
-      color: #fff;
-      font-size: 16px;
-      transition: 0.15s ease;
-    }
-    button:hover {
-      opacity: 0.85;
+    @include f700;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.5s;
+    &:hover {
+      background-color: #e77e1e;
     }
   }
-
-  &_image {
-    align-self: flex-end;
+  &__img {
     position: absolute;
-    right: -90px;
-    bottom: 0px;
-    width: 678px;
-    height: 430px;
+    bottom: 0;
+    right: 50px;
+  }
+}
 
+// Media
+
+@media (max-width: 768px) {
+  .welcome {
+    background: url(../assets/img/welcomeBlue.png) -460px no-repeat,
+      url(../assets/img/welcomeHome.jpg) right no-repeat;
+    &__title {
+      font-size: 30px;
+      line-height: 35px;
+    }
+    &__button {
+      margin-top: 51px;
+    }
     img {
-      width: 100%;
+      height: 334px;
+      right: -95px;
+    }
+  }
+}
+@media (max-width: 320px) {
+  .welcome {
+    height: 318px;
+    padding-top: 24px;
+    background: #003264 url(../assets/img/welcomePeoples.png) bottom;
+    background-position: bottom;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    &__title {
+      font-size: 22px;
+      line-height: 26px;
+      text-align: center;
+    }
+    &__button {
+      display: block;
+      margin: 0 auto;
+      margin-top: 148px;
+      z-index: 8;
+    }
+    img {
+      display: none;
     }
   }
 }
