@@ -1,11 +1,9 @@
 <template>
   <div class="popup">
     <div class="popup-content">
-      <button @click="closePopup">
-        <svg class="close-btn">
-          <use xlink:href="/src/assets/svg_sprite/sprite.svg#close"></use>
-        </svg>
-      </button>
+      <svg class="close-btn" @click="closePopup">
+        <use xlink:href="/src/assets/svg_sprite/sprite.svg#close"></use>
+      </svg>
       <div class="popup-content__wrapper">
         <h2 class="popup-content__title">Отклик на вакансию</h2>
         <form @submit.prevent class="popup-content__form">
@@ -180,7 +178,7 @@ export default {
     position: relative;
     &__wrapper {
       width: 712px;
-      max-height: 100vh;
+      max-height: 90vh;
       overflow-y: auto;
       overflow-x: hidden;
     }
@@ -189,6 +187,7 @@ export default {
       @include f700;
       font-size: 36px;
       margin-bottom: 57px;
+      margin-top: 104px;
     }
     &__form {
       display: flex;
@@ -266,5 +265,8 @@ export default {
 
 .popup-content__wrapper {
   -ms-overflow-style: none; /* убираем скроллбар в Internet Explorer и Edge */
+}
+.popup-content__form-agree {
+  margin-bottom: 65px;
 }
 </style>
