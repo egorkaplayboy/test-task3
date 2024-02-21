@@ -27,10 +27,35 @@
       </div>
     </div>
   </section>
+  <section class="slider-tabel">
+    <swiper :slides-per-view="1" :space-between="50">
+      <swiper-slide :key="item.id" v-for="item in sliderData">
+        <div class="slider-tabel__wrapper">
+          <div class="slider-tabel-img">
+            <img
+              :src="`/src/assets/img/${item.imgUrl}`"
+              alt="employee"
+              loading="lazy"
+            />
+          </div>
+          <div class="slider-tabel-desc">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.grade }}</p>
+            <span>{{ item.desc }}</span>
+          </div>
+        </div>
+      </swiper-slide>
+    </swiper>
+  </section>
 </template>
 
 <script>
+import { Swiper, SwiperSlide } from "swiper/vue";
 export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
   data() {
     return {
       sliderData: [
@@ -150,6 +175,55 @@ export default {
       font-size: 18px;
       color: $Dark;
     }
+  }
+}
+
+// Media
+@media (min-width: 1201px) {
+  .slider-tabel {
+    display: none;
+  }
+}
+@media (max-width: 1200px) {
+  .slider {
+    display: none;
+  }
+  .slider-tabel {
+    margin: 70px 40px;
+    height: 695px;
+    display: flex;
+    &-desc {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      h3 {
+        font-size: 36px;
+        @include f400;
+        color: $Dark;
+      }
+      p {
+        margin-top: 20px;
+        margin-bottom: 40px;
+        @include f400;
+        font-size: 16px;
+        color: $Gray3;
+      }
+      span {
+        @include f400;
+        font-size: 18px;
+        color: $Dark;
+      }
+    }
+  }
+  .slider-tabel__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .slider-tabel-img {
+    background-color: $WhiteBg;
   }
 }
 </style>

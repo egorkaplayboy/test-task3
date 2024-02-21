@@ -144,6 +144,7 @@ export default {
     submitForm() {
       this.v$.$validate();
       if (!this.v$.$error) {
+        // Если обязательные поля заполнены
         alert("success");
       } else {
         alert("fail");
@@ -177,7 +178,7 @@ export default {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
     &__wrapper {
-      width: 712px;
+      max-width: 712px;
       max-height: 90vh;
       overflow-y: auto;
       overflow-x: hidden;
@@ -225,6 +226,7 @@ export default {
     position: absolute;
     right: 0;
     top: 0;
+    z-index: 5;
   }
 }
 .form-button__button {

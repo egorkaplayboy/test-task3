@@ -46,6 +46,7 @@ export default {
   directives: { maska: vMaska },
   data() {
     return {
+      // Состояние фокуса на инпуте
       isFocused: false,
     };
   },

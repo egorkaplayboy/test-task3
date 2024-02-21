@@ -283,12 +283,11 @@ export default {
   }
   .qualities__list-table {
     display: flex;
-    justify-content: center;
     align-items: center;
+    padding: 0 40px;
   }
   .qualities__item-table {
     height: 345px;
-    width: 345px;
     padding: 60px 24px;
     border: 1px solid $Gray2;
     display: flex;

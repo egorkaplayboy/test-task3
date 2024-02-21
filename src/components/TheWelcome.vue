@@ -53,6 +53,8 @@ export default {
     @include f700;
     font-size: 36px;
     color: #ffffff;
+    display: flex;
+    align-items: center;
   }
   &__button {
     margin-top: 59px;
@@ -67,6 +69,7 @@ export default {
     cursor: pointer;
     font-size: 16px;
     transition: all 0.5s;
+    z-index: 6;
     &:hover {
       background-color: #e77e1e;
     }
@@ -80,13 +83,16 @@ export default {
 
 // Media
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .welcome {
+    margin-bottom: 38px;
     background: url(../assets/img/welcomeBlue.png) -460px no-repeat,
       url(../assets/img/welcomeHome.jpg) right no-repeat;
     &__title {
       font-size: 30px;
       line-height: 35px;
+      display: flex;
+      align-items: center;
     }
     &__button {
       margin-top: 51px;
@@ -99,10 +105,11 @@ export default {
 }
 @media (max-width: 320px) {
   .welcome {
+    margin-bottom: 38px;
     height: 318px;
     padding-top: 24px;
-    background: #003264 url(../assets/img/welcomePeoples.png) bottom;
-    background-position: bottom;
+    background: #003264 url(../images/main/mainPeople.png) bottom;
+    background-position: right;
     background-size: 100%;
     background-repeat: no-repeat;
 
@@ -110,15 +117,13 @@ export default {
       font-size: 22px;
       line-height: 26px;
       text-align: center;
+      z-index: 10;
     }
     &__button {
       display: block;
       margin: 0 auto;
       margin-top: 148px;
       z-index: 8;
-    }
-    img {
-      display: none;
     }
   }
 }
