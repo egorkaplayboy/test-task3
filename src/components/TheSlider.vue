@@ -14,7 +14,7 @@
         </div>
         <div class="slider__item-img">
           <img
-            :src="`/src/assets/img/${sliderData[currentSlide].imgUrl}`"
+            src="/src/assets/img/director.png"
             alt="employee"
             loading="lazy"
           />
@@ -33,7 +33,7 @@
         <div class="slider-tabel__wrapper">
           <div class="slider-tabel-img">
             <img
-              :src="`/src/assets/img/${item.imgUrl}`"
+              src="/src/assets/img/director.png"
               alt="employee"
               loading="lazy"
             />
