@@ -341,4 +341,12 @@ export default {
     margin-bottom: 44px;
   }
 }
+@media (max-width: 320px) {
+  .qualities {
+    display: none;
+  }
+  .qualities-table {
+    display: none;
+  }
+}
 </style>
